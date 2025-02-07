@@ -1,0 +1,186 @@
+/* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.light-theme {
+    background-color: #f9fafb;
+    color: #1f2937;
+}
+
+.dark-theme {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: inherit;
+    text-align: center;
+    margin: 0;
+}
+
+.chat-box {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.1); /* Slight transparency for depth */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    min-height: 100px;
+    max-height: 400px;
+    transition: height 0.3s ease;
+    margin-bottom: 10px;
+}
+
+footer {
+    display: flex;
+    gap: 10px;
+    margin-top: 0;
+}
+
+input[type="text"] {
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+    outline: none;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Button colors for light and dark themes */
+.light-theme button {
+    background-color: #007BFF;
+    color: white;
+}
+
+.dark-theme button {
+    background-color: #BB86FC;
+    color: black;
+}
+
+/* Message Bubble Styles */
+.message {
+    max-width: 80%;
+    margin-bottom: 10px;
+    padding: 12px 15px;
+    border-radius: 20px;
+    word-wrap: break-word;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+.user-message {
+    align-self: flex-end;
+    background-color: #007BFF;
+    color: white;
+}
+
+.bot-message {
+    align-self: flex-start;
+    background-color: #ECECEC;
+    color: #1f2937;
+}
+
+.dark-theme .user-message {
+    background-color: #BB86FC;
+    color: black;
+}
+
+.dark-theme .bot-message {
+    background-color: #424242;
+    color: white;
+}
+
+/* Hover effect for message bubbles */
+.message:hover {
+    transform: scale(1.02);
+    transition: transform 0.2s;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #theme-toggle {
+        margin-top: 10px;
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+
+    input[type="text"] {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .chat-box {
+        padding: 10px;
+        border-radius: 10px;
+    }
+}
